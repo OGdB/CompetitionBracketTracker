@@ -31,8 +31,8 @@
             HeaderLabel = new Label();
             TournamentName = new Label();
             RoundLabel = new Label();
-            RoundDropdown = new ComboBox();
-            OnlyShowPlayed = new CheckBox();
+            RoundDropdownValue = new ComboBox();
+            OnlyShowPlayedCheck = new CheckBox();
             MatchupListbox = new ListBox();
             TeamOneLabel = new Label();
             TeamTwoLabel = new Label();
@@ -81,28 +81,28 @@
             RoundLabel.Text = "Round";
             RoundLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // RoundDropdown
+            // RoundDropdownValue
             // 
-            RoundDropdown.FormattingEnabled = true;
-            RoundDropdown.Location = new Point(142, 96);
-            RoundDropdown.Name = "RoundDropdown";
-            RoundDropdown.Size = new Size(183, 38);
-            RoundDropdown.TabIndex = 3;
+            RoundDropdownValue.FormattingEnabled = true;
+            RoundDropdownValue.Location = new Point(142, 96);
+            RoundDropdownValue.Name = "RoundDropdownValue";
+            RoundDropdownValue.Size = new Size(183, 38);
+            RoundDropdownValue.TabIndex = 3;
             // 
-            // OnlyShowPlayed
+            // OnlyShowPlayedCheck
             // 
-            OnlyShowPlayed.AutoSize = true;
-            OnlyShowPlayed.FlatStyle = FlatStyle.Flat;
-            OnlyShowPlayed.Font = new Font("Segoe UI Light", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            OnlyShowPlayed.ForeColor = Color.FromArgb(51, 153, 255);
-            OnlyShowPlayed.Location = new Point(351, 93);
-            OnlyShowPlayed.Name = "OnlyShowPlayed";
-            OnlyShowPlayed.Size = new Size(235, 41);
-            OnlyShowPlayed.TabIndex = 4;
-            OnlyShowPlayed.Text = "Only Show Played";
-            OnlyShowPlayed.TextAlign = ContentAlignment.TopCenter;
-            OnlyShowPlayed.UseVisualStyleBackColor = true;
-            OnlyShowPlayed.CheckedChanged += checkBox1_CheckedChanged;
+            OnlyShowPlayedCheck.AutoSize = true;
+            OnlyShowPlayedCheck.FlatStyle = FlatStyle.Flat;
+            OnlyShowPlayedCheck.Font = new Font("Segoe UI Light", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            OnlyShowPlayedCheck.ForeColor = Color.FromArgb(51, 153, 255);
+            OnlyShowPlayedCheck.Location = new Point(351, 93);
+            OnlyShowPlayedCheck.Name = "OnlyShowPlayedCheck";
+            OnlyShowPlayedCheck.Size = new Size(235, 41);
+            OnlyShowPlayedCheck.TabIndex = 4;
+            OnlyShowPlayedCheck.Text = "Only Show Played";
+            OnlyShowPlayedCheck.TextAlign = ContentAlignment.TopCenter;
+            OnlyShowPlayedCheck.UseVisualStyleBackColor = true;
+            OnlyShowPlayedCheck.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // MatchupListbox
             // 
@@ -213,8 +213,8 @@
             Controls.Add(TeamTwoScoreValue);
             Controls.Add(TeamOneScoreValue);
             Controls.Add(MatchupListbox);
-            Controls.Add(OnlyShowPlayed);
-            Controls.Add(RoundDropdown);
+            Controls.Add(OnlyShowPlayedCheck);
+            Controls.Add(RoundDropdownValue);
             Controls.Add(TeamTwoLabel);
             Controls.Add(TeamTwoScore);
             Controls.Add(TeamOneScore);
@@ -236,8 +236,8 @@
         private Label HeaderLabel;
         private Label TournamentName;
         private Label RoundLabel;
-        private ComboBox RoundDropdown;
-        private CheckBox OnlyShowPlayed;
+        private ComboBox RoundDropdownValue;
+        private CheckBox OnlyShowPlayedCheck;
         private ListBox MatchupListbox;
         private Label TeamOneLabel;
         private Label TeamTwoLabel;
