@@ -172,7 +172,7 @@
             RemoveTeamLink.AutoSize = true;
             RemoveTeamLink.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             RemoveTeamLink.LinkColor = Color.Firebrick;
-            RemoveTeamLink.Location = new Point(757, 113);
+            RemoveTeamLink.Location = new Point(461, 254);
             RemoveTeamLink.Name = "RemoveTeamLink";
             RemoveTeamLink.Size = new Size(233, 30);
             RemoveTeamLink.TabIndex = 12;
@@ -209,7 +209,7 @@
             RemovePrizeLink.AutoSize = true;
             RemovePrizeLink.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             RemovePrizeLink.LinkColor = Color.Firebrick;
-            RemovePrizeLink.Location = new Point(757, 358);
+            RemovePrizeLink.Location = new Point(463, 510);
             RemovePrizeLink.Name = "RemovePrizeLink";
             RemovePrizeLink.Size = new Size(228, 30);
             RemovePrizeLink.TabIndex = 12;
@@ -232,7 +232,7 @@
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(994, 536);
+            ClientSize = new Size(774, 553);
             Controls.Add(PrizesList);
             Controls.Add(TeamsInTournamentList);
             Controls.Add(AddTeamButton);
