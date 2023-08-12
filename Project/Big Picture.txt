@@ -1,0 +1,25 @@
+Structure: Windows Forms application & Class library.
+(Take into account future porting to other applications)
+
+Data: SQL / Text file.
+
+Users: One at a time on application (not real-time)
+	> Something like a refresh-button that can be clicked to see if there are any updates to the provided data.
+
+
+
+Key Concepts:
+E-mail: How does the system e-mail (and how can you do that with C#?)
+
+SQL: How to do SQL with C#?
+
+Custom events: When a game is completed, the tournaments is over etc., we need the system to respond and fire off an event.
+
+Error handling: Need error handling to give better info so I know what goes wrong and the system can continue running despite errors.
+
+Interfaces: Passing information from form to form is best done through interfaces.
+
+Random ordering: On various occasions the system needs to randomize information (bracket, 'byes') etc.
+
+Bonus
+Texting: Instead of an e-mail, perhaps some tournament members would prefer receiving a text instead?

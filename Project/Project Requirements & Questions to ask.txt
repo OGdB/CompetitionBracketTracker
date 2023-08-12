@@ -1,0 +1,64 @@
+A Tournament tracker: 
+Determine who is the best
+Bracket system
+Single-elimination style bracket.
+NCAA Basketball Tournament Bracket model for March Madness.
+
+1. Track games played; outputs the winner.
+2. Multiple competitors in the tournament.
+3. Create a tournament plan (who plays against who, in what order)
+4. Schedule games (not specified).
+5. Loss == player elimination.
+6. Last player standing == winner.
+
+Questions to ask:
+1. How many players in a tournament? Is there a minimum/maximum/fixed?
+>> The application should be abel to handle a variable number of participants.
+
+2. How do we deal with less than a full complement of players (e.g. 3 teams/players).
+>> If a tournament has a less than perfect number of players should add 'byes'. == Certain people/teams get to skip the first round (automatic win).
+
+3. Do we influence who plays against who, or is it completely randomized?
+>> Ordering should be randomized.
+
+4. Should games be scheduled to be played at a specific time, or is it played whenever the players/teams want?
+>> The games should be in whatever order the player(s) want to play.
+
+5. If scheduled in the system, how does the scheduling work? Time slots, decided by the system?
+>> Not scheduled. Don't care.
+
+6. If played whenever, can a second-round game be played before all first-round games are completed?
+>> Each round should be fully completed before the next round is displayed.
+
+7. Does the system store scores, or just who won at the end?
+>> Storing a simple score would be nice. Number for each player/team.
+
+8. What kind of front-end should this application have?
+	Form, Webpages, (mobile) application?
+>> It should be a desktop system for now, but down the road we might want to turn it into an app / website.
+>> Keep into mind the possible long-term goal of porting to another type of application.
+
+9. Where will the data be stored?
+	All the games will not be played in a single session, so we need to save data in-between the games. Where do we store all this data?
+>> Ideally, in a Microsoft SQL Database, but with an option to store to a text-file instead.
+
+10. Will the system handle entry fees/prizes/other payouts, or is this handled by the organizers?
+>> Yes. All Optional. The Tournament Administrator chooses the tournament prize for a variable number of places (1st/2nd/3rd prize and so on). The total cash prize shouldn't exceed the sum of entry fees. A percentage-based system (X% of entry fee to place 1, Y% to place 2, etc.). 
+
+11. What type of (result)reporting is needed?
+	Should the system report who's won? Who's out?
+>> A simple report specifying the outcomes of the games per round, also specifying who won and by how much. They can be displayed on a form, or can be e-mailed to the tournament competitors & administrator.
+
+12. Who can fill in the results of a game? Any user? Administrators?
+>> Anyone in the competition should be able to fill in the game scores.
+
+13. Are there varying levels of access?
+	Moderators / Administrators >>..
+>> No. There is one method of varied access though: whether the tournament competitors are allowed into the application, or are only receiving updates through e-mail.
+
+14. Should the system notify participants about upcoming games?
+	If the system does the scheduling, it seems reasonable that the system should notify the participants when they are up.
+>> Yes, the system should email users that are due to play, as well as those who have been scheduled.
+
+15. Does the tournament tracker handle teams, individuals, or should it be able to do both?
+>> Yes, there are teams. Nothing fancy; if you are in a team, you just all get the same e-mails etc. Teams have team-names.
