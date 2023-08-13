@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents a team in a tournament.
     /// </summary>
-    internal class TeamModel
+    public class TeamModel
     {
         public TeamModel(List<PersonModel> persons, string teamName)
         {

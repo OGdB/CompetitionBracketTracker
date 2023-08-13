@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents one team in the competition.
     /// </summary>
-    internal class MatchEntryModel
+    public class MatchEntryModel
     {
 
         /// <summary>

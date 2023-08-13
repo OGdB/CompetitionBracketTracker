@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents a single match between two teams.
     /// </summary>
-    internal class MatchModel
+    public class MatchModel
     {
         /// <summary>
         /// Constructor of a match between two teams.

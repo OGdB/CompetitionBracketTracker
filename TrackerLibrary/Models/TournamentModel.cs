@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents a tournament.
     /// </summary>
-    internal class TournamentModel
+    public class TournamentModel
     {
         public TournamentModel(string tournamentName, decimal entryFee, List<TeamModel> enteredTeams, List<PrizeModel> prizes, List<List<MatchEntryModel>> matchEntries)
         {

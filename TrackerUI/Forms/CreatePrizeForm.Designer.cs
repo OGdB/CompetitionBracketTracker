@@ -43,7 +43,7 @@
             // 
             // CreateMemberButton
             // 
-            CreateMemberButton.Location = new Point(139, 336);
+            CreateMemberButton.Location = new Point(139, 348);
             CreateMemberButton.Name = "CreateMemberButton";
             CreateMemberButton.Size = new Size(178, 41);
             CreateMemberButton.TabIndex = 32;
@@ -159,7 +159,7 @@
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(463, 393);
+            ClientSize = new Size(463, 416);
             Controls.Add(OrLabel);
             Controls.Add(CreateMemberButton);
             Controls.Add(PrizePercentageValue);

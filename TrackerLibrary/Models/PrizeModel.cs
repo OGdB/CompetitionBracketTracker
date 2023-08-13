@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents a prize of a tournament.
     /// </summary>
-    internal class PrizeModel
+    public class PrizeModel
     {
         public PrizeModel(int placeNumber, string placeName, double prizeAmount, double prizePercentage)
         {

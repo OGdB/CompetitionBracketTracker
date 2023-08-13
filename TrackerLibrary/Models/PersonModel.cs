@@ -3,7 +3,7 @@
     /// <summary>
     /// Represents a single person.
     /// </summary>
-    internal class PersonModel
+    public class PersonModel
     {
         public PersonModel(string firstName, string lastName, string emailAddress, string phoneNumber)
         {
