@@ -1,4 +1,6 @@
-﻿namespace TrackerLibrary
+﻿using TrackerLibrary.Models;
+
+namespace TrackerLibrary
 {
     /// <summary>
     /// Interface for saving data.

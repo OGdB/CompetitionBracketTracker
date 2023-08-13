@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using TrackerLibrary;
+using TrackerLibrary.Models;
 
 namespace TrackerUI
 {

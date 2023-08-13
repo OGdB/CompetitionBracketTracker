@@ -1,4 +1,4 @@
-﻿namespace TrackerLibrary
+﻿namespace TrackerLibrary.Models
 {
     /// <summary>
     /// Represents a prize of a tournament.
@@ -6,8 +6,8 @@
     public class PrizeModel
     {
         // Constructors
-        public PrizeModel() 
-        { 
+        public PrizeModel()
+        {
 
         }
         public PrizeModel(int placeNumber, string placeName, decimal prizeAmount = 0, double prizePercentage = 0)
@@ -46,11 +46,11 @@
         /// The name this place-number will be referred to as.
         /// </summary>
         public string PlaceName { get; set; }
- 
+
         /// <summary>
         /// The height of the prize.
         /// </summary>
-        public decimal PrizeAmount{ get; set; }
+        public decimal PrizeAmount { get; set; }
 
         /// <summary>
         /// The percentage of this prize relative to the total prize money.
