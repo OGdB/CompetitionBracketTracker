@@ -5,12 +5,6 @@
     /// </summary>
     public class TeamModel
     {
-        public TeamModel(List<PersonModel> persons, string teamName)
-        {
-            Persons = persons;
-            TeamName = teamName;
-        }
-
         /// <summary>
         /// The persons in this team.
         /// </summary>

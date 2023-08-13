@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            CreateMemberButton = new Button();
+            CreatePrizeButton = new Button();
             PlaceNumberValue = new TextBox();
             PlaceNumberLabel = new Label();
             HeaderLabel = new Label();
@@ -41,21 +41,22 @@
             PrizePercentageValue = new TextBox();
             SuspendLayout();
             // 
-            // CreateMemberButton
+            // CreatePrizeButton
             // 
-            CreateMemberButton.Location = new Point(139, 348);
-            CreateMemberButton.Name = "CreateMemberButton";
-            CreateMemberButton.Size = new Size(178, 41);
-            CreateMemberButton.TabIndex = 32;
-            CreateMemberButton.Text = "Create Prize";
-            CreateMemberButton.UseVisualStyleBackColor = true;
+            CreatePrizeButton.Location = new Point(139, 348);
+            CreatePrizeButton.Name = "CreatePrizeButton";
+            CreatePrizeButton.Size = new Size(178, 41);
+            CreatePrizeButton.TabIndex = 4;
+            CreatePrizeButton.Text = "Create Prize";
+            CreatePrizeButton.UseVisualStyleBackColor = true;
+            CreatePrizeButton.Click += CreatePrizeButton_Click;
             // 
             // PlaceNumberValue
             // 
             PlaceNumberValue.Location = new Point(229, 89);
             PlaceNumberValue.Name = "PlaceNumberValue";
             PlaceNumberValue.Size = new Size(215, 36);
-            PlaceNumberValue.TabIndex = 31;
+            PlaceNumberValue.TabIndex = 0;
             // 
             // PlaceNumberLabel
             // 
@@ -99,7 +100,7 @@
             PlaceNameValue.Location = new Point(229, 128);
             PlaceNameValue.Name = "PlaceNameValue";
             PlaceNameValue.Size = new Size(215, 36);
-            PlaceNameValue.TabIndex = 31;
+            PlaceNameValue.TabIndex = 1;
             // 
             // PrizeAmountLabel
             // 
@@ -119,7 +120,8 @@
             PrizeAmountValue.Location = new Point(229, 170);
             PrizeAmountValue.Name = "PrizeAmountValue";
             PrizeAmountValue.Size = new Size(215, 36);
-            PrizeAmountValue.TabIndex = 31;
+            PrizeAmountValue.TabIndex = 2;
+            PrizeAmountValue.Text = "0";
             // 
             // OrLabel
             // 
@@ -152,7 +154,8 @@
             PrizePercentageValue.Location = new Point(229, 282);
             PrizePercentageValue.Name = "PrizePercentageValue";
             PrizePercentageValue.Size = new Size(215, 36);
-            PrizePercentageValue.TabIndex = 31;
+            PrizePercentageValue.TabIndex = 3;
+            PrizePercentageValue.Text = "0";
             // 
             // CreatePrizeForm
             // 
@@ -161,7 +164,7 @@
             BackColor = Color.White;
             ClientSize = new Size(463, 416);
             Controls.Add(OrLabel);
-            Controls.Add(CreateMemberButton);
+            Controls.Add(CreatePrizeButton);
             Controls.Add(PrizePercentageValue);
             Controls.Add(PrizePercentageLabel);
             Controls.Add(PrizeAmountValue);
@@ -181,7 +184,7 @@
 
         #endregion
 
-        private Button CreateMemberButton;
+        private Button CreatePrizeButton;
         private TextBox PlaceNumberValue;
         private Label PlaceNumberLabel;
         private Label HeaderLabel;

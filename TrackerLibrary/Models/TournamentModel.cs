@@ -5,15 +5,6 @@
     /// </summary>
     public class TournamentModel
     {
-        public TournamentModel(string tournamentName, decimal entryFee, List<TeamModel> enteredTeams, List<PrizeModel> prizes, List<List<MatchEntryModel>> matchEntries)
-        {
-            TournamentName = tournamentName;
-            EntryFee = entryFee;
-            EnteredTeams = enteredTeams;
-            Prizes = prizes;
-            MatchEntries = matchEntries;
-        }
-
         /// <summary>
         /// The name of this tournament.
         /// </summary>

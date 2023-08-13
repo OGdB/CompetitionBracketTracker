@@ -5,20 +5,6 @@
     /// </summary>
     public class MatchEntryModel
     {
-
-        /// <summary>
-        /// Main constructor of match entry.
-        /// </summary>
-        /// <param name="competingTeam">This team</param>
-        /// <param name="initialScore">The score of this team before the start of this round.</param>
-        /// <param name="parentMatch">The match entry this team came from as the winner.</param>
-        public MatchEntryModel(TeamModel competingTeam, double initialScore, MatchEntryModel parentMatch)
-        {
-            CompetingTeam = competingTeam;
-            TeamScore = initialScore;
-            ParentMatch = parentMatch;
-        }
-
         /// <summary>
         /// The entry's related team.
         /// </summary>

@@ -9,7 +9,12 @@ namespace TrackerUI
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new TournamentDashboardForm());
+
+            // Initialize the database connections.
+            TrackerLibrary.GlobalConfig.InitializeConnections(useDatabase: true, useTextfiles: true);
+
+            Application.Run(new CreatePrizeForm());
+            //Application.Run(new TournamentDashboardForm());
         }
     }
 }

@@ -5,14 +5,6 @@
     /// </summary>
     public class PersonModel
     {
-        public PersonModel(string firstName, string lastName, string emailAddress, string phoneNumber)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-            EmailAddress = emailAddress;
-            PhoneNumber = phoneNumber;
-        }
-
         /// <summary>
         /// The first name of this person.
         /// </summary>
