@@ -1,6 +1,6 @@
-﻿using System.Diagnostics;
-
-namespace TrackerLibrary;
+﻿namespace TrackerLibrary;
+using System.Diagnostics;
+using TrackerLibrary.DataAccess;
 
 /// <summary>
 /// Contains global data & configurations.
@@ -28,7 +28,7 @@ public static class GlobalConfig
         if (useTextfiles)
         {
             Debug.WriteLine("Establish text-database connection");
-            TextConnection textConnection = new();
+            TextConnector textConnection = new();
             Connections.Add(textConnection);
         }
     }

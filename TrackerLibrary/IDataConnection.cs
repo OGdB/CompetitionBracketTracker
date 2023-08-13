@@ -1,6 +1,5 @@
-﻿using TrackerLibrary.Models;
-
-namespace TrackerLibrary;
+﻿namespace TrackerLibrary;
+using TrackerLibrary.Models;
 
 /// <summary>
 /// Interface for saving data.

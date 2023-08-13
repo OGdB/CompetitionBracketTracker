@@ -1,9 +1,8 @@
-﻿using System.Diagnostics;
+﻿namespace TrackerLibrary.DataAccess;
+using System.Diagnostics;
 using TrackerLibrary.Models;
 
-namespace TrackerLibrary;
-
-public class TextConnection : IDataConnection
+public class TextConnector : IDataConnection
 {
     // TODO - Wire up the CreatePrize for text files.
     public PrizeModel CreatePrize(PrizeModel model)

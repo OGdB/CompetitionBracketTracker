@@ -1,7 +1,6 @@
-﻿using System.Diagnostics;
+﻿namespace TrackerLibrary.DataAccess;
 using TrackerLibrary.Models;
-
-namespace TrackerLibrary;
+using System.Diagnostics;
 
 public class SqlConnector : IDataConnection
 {
