@@ -1,4 +1,6 @@
 ﻿namespace TrackerLibrary;
+
+using System.Configuration;
 using System.Diagnostics;
 using TrackerLibrary.DataAccess;
 
@@ -7,29 +9,28 @@ using TrackerLibrary.DataAccess;
 /// </summary>
 public static class GlobalConfig
 {
-    public static List<IDataConnection> Connections { get; private set; } = new();
+    public static IDataConnection Connection { get; private set; }
 
     /// <summary>
     /// Initialize the connections to the databases to save competition data.
     /// </summary>
     /// <param name="useDatabase">Use the SQL database for saving data.</param>
     /// <param name="useTextfiles">Use text files for saving data.</param>
-    public static void InitializeConnections(bool useDatabase, bool useTextfiles)
+    public static void InitializeConnections(DatabaseType db)
     {
-        // TODO - Set up the SQL-connector properly.
-        if (useDatabase)
+        switch (db)
         {
-            Debug.WriteLine("Establish SQL-database connection");
-            SqlConnector sql = new();
-            Connections.Add(sql);
-        }
+            case DatabaseType.SqlDatabase:
+                Debug.WriteLine("Establish SQL-database connection");
+                Connection = new SqlConnector();
+                break;
 
-        // TODO - Create the text connection.
-        if (useTextfiles)
-        {
-            Debug.WriteLine("Establish text-database connection");
-            TextConnector textConnection = new();
-            Connections.Add(textConnection);
+            case DatabaseType.TextFile:
+                Debug.WriteLine("Establish text-database connection");
+                Connection = new TextConnector();
+                break;
         }
     }
+
+    public static string CnnString(string name) => ConfigurationManager.ConnectionStrings[name].ConnectionString;
 }

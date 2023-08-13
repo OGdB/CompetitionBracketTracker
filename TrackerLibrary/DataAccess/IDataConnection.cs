@@ -1,8 +1,8 @@
-﻿namespace TrackerLibrary;
+﻿namespace TrackerLibrary.DataAccess;
 using TrackerLibrary.Models;
 
 /// <summary>
-/// Interface for saving data.
+/// Interface for methods of saving data.
 /// </summary>
 public interface IDataConnection
 {

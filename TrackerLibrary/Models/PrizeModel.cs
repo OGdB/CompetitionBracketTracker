@@ -45,7 +45,7 @@ public class PrizeModel
     /// <summary>
     /// The name this place-number will be referred to as.
     /// </summary>
-    public string PlaceName { get; set; }
+    public string? PlaceName { get; set; }
 
     /// <summary>
     /// The height of the prize.

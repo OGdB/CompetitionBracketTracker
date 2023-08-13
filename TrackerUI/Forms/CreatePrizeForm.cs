@@ -25,16 +25,17 @@ namespace TrackerUI
 
             // If any of the input isn't valid, return.
             if (!ValidateFormInput(placeNumber, placeName, prizeAmount, prizePercentage))
+            {
                 MessageBox.Show("The form contains invalid input, please check it and try again.", "Invalid Input");
+                return;
+            }
 
             PrizeModel model = new(placeNumber, placeName, prizeAmount, prizePercentage);
 
             // Save the prize model to the configured databases.
-            foreach (var db in GlobalConfig.Connections)
-            {
-                db.CreatePrize(model);
-            }
+            GlobalConfig.Connection.CreatePrize(model);
 
+            // Reset the values of the form.
             PlaceNumberValue.Text = string.Empty;
             PlaceNameValue.Text = string.Empty;
             PrizeAmountValue.Text = "0";
