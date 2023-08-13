@@ -1,12 +1,11 @@
 ﻿using TrackerLibrary.Models;
 
-namespace TrackerLibrary
+namespace TrackerLibrary;
+
+/// <summary>
+/// Interface for saving data.
+/// </summary>
+public interface IDataConnection
 {
-    /// <summary>
-    /// Interface for saving data.
-    /// </summary>
-    public interface IDataConnection
-    {
-        PrizeModel CreatePrize(PrizeModel model);
-    }
+    PrizeModel CreatePrize(PrizeModel model);
 }
