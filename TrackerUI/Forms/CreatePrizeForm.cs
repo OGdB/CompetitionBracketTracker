@@ -30,10 +30,10 @@ namespace TrackerUI
                 return;
             }
 
-            PrizeModel model = new(placeNumber, placeName, prizeAmount, prizePercentage);
+            PrizeModel prizeModel = new(placeNumber, placeName, prizeAmount, prizePercentage);
 
             // Save the prize model to the configured databases.
-            GlobalConfig.Connection.CreatePrize(model);
+            GlobalConfig.Connection.CreatePrize(prizeModel);
 
             // Reset the values of the form.
             PlaceNumberValue.Text = string.Empty;

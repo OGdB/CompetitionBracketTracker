@@ -5,6 +5,7 @@
 /// </summary>
 public class PrizeModel
 {
+    #region Constructors
     // Constructors
     public PrizeModel()
     {
@@ -31,6 +32,24 @@ public class PrizeModel
         double.TryParse(prizePercentage, out double prizePercentageValue);
         PrizePercentage = prizePercentageValue;
     }
+
+    /// <summary>
+    /// Constructor used for text-file saving. Should throw exception if parse fails.
+    /// </summary>
+    public PrizeModel(string id, string placeNumber, string placeName, string prizeAmount = "0", string prizePercentage = "0")
+    {
+        Id = int.Parse(id);
+
+        PlaceNumber = int.Parse(placeNumber);
+
+        if (placeName.Length > 0)
+            PlaceName = placeName;
+
+        PrizeAmount = decimal.Parse(prizeAmount);
+
+        PrizePercentage = double.Parse(prizePercentage);
+    }
+    #endregion
 
     /// <summary>
     /// The unique identifier of the prize.

@@ -32,5 +32,10 @@ public static class GlobalConfig
         }
     }
 
-    public static string CnnString(string name) => ConfigurationManager.ConnectionStrings[name].ConnectionString;
+    /// <summary>
+    /// Retrieve the connection string to the SQL database.
+    /// </summary>
+    /// <param name="databaseName">The database to connect to.</param>
+    /// <returns>The connection string to the database.</returns>
+    public static string CnnString(string databaseName) => ConfigurationManager.ConnectionStrings[databaseName].ConnectionString;
 }

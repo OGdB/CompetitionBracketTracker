@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Reflection;
+using TrackerLibrary;
+using TrackerLibrary.Models;
 
 namespace TrackerUI
 {
@@ -17,18 +11,42 @@ namespace TrackerUI
             InitializeComponent();
         }
 
-        private void CreatePrizeLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void CreateMemberButton_Click(object sender, EventArgs e)
         {
+            // Get input
+            string firstNameValue = FirstNameValue.Text;
+            string lastNameValue = LastNameValue.Text;
+            string emailValue = EmailValue.Text;
+            string phoneValue = PhoneValue.Text;
 
+            // Validate
+            if (!ValidateFormInput(firstNameValue, lastNameValue, emailValue, phoneValue))
+            {
+                MessageBox.Show("The form contains invalid input, please check it and try again.", "Invalid Input");
+                return;
+            }
+
+            PersonModel personModel = new(firstNameValue, lastNameValue, emailValue, phoneValue);
+
+            // Save To Database
+            GlobalConfig.Connection.CreatePerson(personModel);
+
+            // Add To Team.
+
+            // Reset the values of the form.
+            FirstNameValue.Text = string.Empty;
+            LastNameValue.Text = string.Empty;
+            EmailValue.Text = string.Empty;
+            PhoneValue.Text = string.Empty;
         }
 
-        private void CreateTeamForm_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Checks whether the input in all fields are valid inputs.
+        /// </summary>
+        /// <returns>Is the input valid or not?</returns>
+        private bool ValidateFormInput(string firstName, string lastName, string email, string phone)
         {
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
+            return firstName.Length > 0 && lastName.Length > 0 && email.Length > 0;
         }
     }
 }

@@ -5,6 +5,39 @@
 /// </summary>
 public class PersonModel
 {
+    #region Constructors
+    // Constructors
+    public PersonModel()
+    {
+    }
+
+    public PersonModel(string firstName, string lastName, string emailAddress, string phoneNumber)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        EmailAddress = emailAddress;
+        CellphoneNumber = phoneNumber;
+    }
+    
+    /// <summary>
+    /// Constructor for text-file saving
+    /// </summary>
+    public PersonModel(string id, string firstName, string lastName, string emailAddress, string phone)
+    {
+        Id = int.Parse(id);
+        FirstName = firstName;
+        LastName = lastName;
+        EmailAddress = emailAddress;
+        CellphoneNumber = phone;
+    }
+
+    #endregion
+
+    /// <summary>
+    /// The unique identifier of the person.
+    /// </summary>
+    public int Id { get; set; }
+
     /// <summary>
     /// The first name of this person.
     /// </summary>
@@ -23,5 +56,5 @@ public class PersonModel
     /// <summary>
     /// The phone number to text to this person.
     /// </summary>
-    public string PhoneNumber { get; set; }
+    public string CellphoneNumber { get; set; }
 }

@@ -30,11 +30,11 @@
         {
             TeamsInTournamentList = new ListBox();
             RemoveTeamLink = new LinkLabel();
-            TournamentNameValue = new TextBox();
+            TeamNameValue = new TextBox();
             TournamentTeamsLabel = new Label();
             TeamNameLabel = new Label();
             HeaderLabel = new Label();
-            SelectTeamValue = new ComboBox();
+            SelectTeamMemberValue = new ComboBox();
             SelectTeamMemberLabel = new Label();
             AddTeamButton = new Button();
             AddMemberLabel = new Label();
@@ -58,7 +58,7 @@
             TeamsInTournamentList.Margin = new Padding(0);
             TeamsInTournamentList.Name = "TeamsInTournamentList";
             TeamsInTournamentList.Size = new Size(354, 392);
-            TeamsInTournamentList.TabIndex = 30;
+            TeamsInTournamentList.TabIndex = 11;
             // 
             // RemoveTeamLink
             // 
@@ -68,16 +68,16 @@
             RemoveTeamLink.Location = new Point(508, 496);
             RemoveTeamLink.Name = "RemoveTeamLink";
             RemoveTeamLink.Size = new Size(176, 30);
-            RemoveTeamLink.TabIndex = 25;
+            RemoveTeamLink.TabIndex = 12;
             RemoveTeamLink.TabStop = true;
             RemoveTeamLink.Text = "Remove Selected";
             // 
-            // TournamentNameValue
+            // TeamNameValue
             // 
-            TournamentNameValue.Location = new Point(15, 104);
-            TournamentNameValue.Name = "TournamentNameValue";
-            TournamentNameValue.Size = new Size(345, 36);
-            TournamentNameValue.TabIndex = 21;
+            TeamNameValue.Location = new Point(15, 104);
+            TeamNameValue.Name = "TeamNameValue";
+            TeamNameValue.Size = new Size(345, 36);
+            TeamNameValue.TabIndex = 0;
             // 
             // TournamentTeamsLabel
             // 
@@ -112,17 +112,17 @@
             HeaderLabel.ForeColor = Color.RoyalBlue;
             HeaderLabel.Location = new Point(12, 9);
             HeaderLabel.Name = "HeaderLabel";
-            HeaderLabel.Size = new Size(317, 50);
+            HeaderLabel.Size = new Size(213, 50);
             HeaderLabel.TabIndex = 15;
-            HeaderLabel.Text = "Create Tournament";
+            HeaderLabel.Text = "Create Team";
             // 
-            // SelectTeamValue
+            // SelectTeamMemberValue
             // 
-            SelectTeamValue.FormattingEnabled = true;
-            SelectTeamValue.Location = new Point(15, 207);
-            SelectTeamValue.Name = "SelectTeamValue";
-            SelectTeamValue.Size = new Size(345, 38);
-            SelectTeamValue.TabIndex = 23;
+            SelectTeamMemberValue.FormattingEnabled = true;
+            SelectTeamMemberValue.Location = new Point(15, 207);
+            SelectTeamMemberValue.Name = "SelectTeamMemberValue";
+            SelectTeamMemberValue.Size = new Size(345, 38);
+            SelectTeamMemberValue.TabIndex = 1;
             // 
             // SelectTeamMemberLabel
             // 
@@ -142,7 +142,7 @@
             AddTeamButton.Location = new Point(97, 251);
             AddTeamButton.Name = "AddTeamButton";
             AddTeamButton.Size = new Size(178, 41);
-            AddTeamButton.TabIndex = 28;
+            AddTeamButton.TabIndex = 2;
             AddTeamButton.Text = "Add Member";
             AddTeamButton.UseVisualStyleBackColor = true;
             // 
@@ -177,7 +177,7 @@
             FirstNameValue.Location = new Point(184, 347);
             FirstNameValue.Name = "FirstNameValue";
             FirstNameValue.Size = new Size(215, 36);
-            FirstNameValue.TabIndex = 21;
+            FirstNameValue.TabIndex = 3;
             // 
             // LastNameLabel
             // 
@@ -197,7 +197,7 @@
             LastNameValue.Location = new Point(184, 384);
             LastNameValue.Name = "LastNameValue";
             LastNameValue.Size = new Size(215, 36);
-            LastNameValue.TabIndex = 21;
+            LastNameValue.TabIndex = 4;
             // 
             // EmailLabel
             // 
@@ -217,7 +217,7 @@
             EmailValue.Location = new Point(185, 421);
             EmailValue.Name = "EmailValue";
             EmailValue.Size = new Size(215, 36);
-            EmailValue.TabIndex = 21;
+            EmailValue.TabIndex = 5;
             // 
             // PhoneLabel
             // 
@@ -237,16 +237,17 @@
             PhoneValue.Location = new Point(185, 458);
             PhoneValue.Name = "PhoneValue";
             PhoneValue.Size = new Size(215, 36);
-            PhoneValue.TabIndex = 21;
+            PhoneValue.TabIndex = 6;
             // 
             // CreateMemberButton
             // 
             CreateMemberButton.Location = new Point(97, 503);
             CreateMemberButton.Name = "CreateMemberButton";
             CreateMemberButton.Size = new Size(178, 41);
-            CreateMemberButton.TabIndex = 28;
+            CreateMemberButton.TabIndex = 7;
             CreateMemberButton.Text = "Create Member";
             CreateMemberButton.UseVisualStyleBackColor = true;
+            CreateMemberButton.Click += CreateMemberButton_Click;
             // 
             // CreateTeamForm
             // 
@@ -258,13 +259,13 @@
             Controls.Add(CreateMemberButton);
             Controls.Add(AddTeamButton);
             Controls.Add(RemoveTeamLink);
-            Controls.Add(SelectTeamValue);
+            Controls.Add(SelectTeamMemberValue);
             Controls.Add(SelectTeamMemberLabel);
             Controls.Add(PhoneValue);
             Controls.Add(EmailValue);
             Controls.Add(LastNameValue);
             Controls.Add(FirstNameValue);
-            Controls.Add(TournamentNameValue);
+            Controls.Add(TeamNameValue);
             Controls.Add(AddMemberLabel);
             Controls.Add(PhoneLabel);
             Controls.Add(EmailLabel);
@@ -292,12 +293,12 @@
         private Label SelectTeamLabel;
         private TextBox EntreFeeValue;
         private Label EntryFeeLabel;
-        private TextBox TournamentNameValue;
+        private TextBox TeamNameValue;
         private Label PrizesLabel;
         private Label TournamentTeamsLabel;
         private Label TeamNameLabel;
         private Label HeaderLabel;
-        private ComboBox SelectTeamValue;
+        private ComboBox SelectTeamMemberValue;
         private Label SelectTeamMemberLabel;
         private Button AddTeamButton;
         private Label AddMemberLabel;
