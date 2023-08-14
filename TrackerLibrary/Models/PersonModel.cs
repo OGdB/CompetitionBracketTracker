@@ -11,7 +11,7 @@ public class PersonModel
     {
     }
 
-    public PersonModel(string firstName, string lastName, string emailAddress, string phoneNumber)
+    public PersonModel(string firstName = "Steve", string lastName = "Johnson", string emailAddress = "Johnson@Steve.com", string phoneNumber = "123456789")
     {
         FirstName = firstName;
         LastName = lastName;
@@ -47,6 +47,11 @@ public class PersonModel
     /// The last name of this person.
     /// </summary>
     public string LastName { get; set; }
+
+    /// <summary>
+    /// Return the full name of this person.
+    /// </summary>
+    public string FullName => $"{FirstName} {LastName}";
 
     /// <summary>
     /// The e-mail address to contact this person with.

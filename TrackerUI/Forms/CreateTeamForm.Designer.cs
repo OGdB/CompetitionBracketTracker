@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             TeamsInTournamentList = new ListBox();
-            RemoveTeamLink = new LinkLabel();
+            RemoveMemberLink = new LinkLabel();
             TeamNameValue = new TextBox();
             TournamentTeamsLabel = new Label();
             TeamNameLabel = new Label();
@@ -47,6 +47,7 @@
             PhoneLabel = new Label();
             PhoneValue = new TextBox();
             CreateMemberButton = new Button();
+            CreateTeamButton = new Button();
             SuspendLayout();
             // 
             // TeamsInTournamentList
@@ -60,17 +61,18 @@
             TeamsInTournamentList.Size = new Size(354, 392);
             TeamsInTournamentList.TabIndex = 11;
             // 
-            // RemoveTeamLink
+            // RemoveMemberLink
             // 
-            RemoveTeamLink.AutoSize = true;
-            RemoveTeamLink.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            RemoveTeamLink.LinkColor = Color.Firebrick;
-            RemoveTeamLink.Location = new Point(508, 496);
-            RemoveTeamLink.Name = "RemoveTeamLink";
-            RemoveTeamLink.Size = new Size(176, 30);
-            RemoveTeamLink.TabIndex = 12;
-            RemoveTeamLink.TabStop = true;
-            RemoveTeamLink.Text = "Remove Selected";
+            RemoveMemberLink.AutoSize = true;
+            RemoveMemberLink.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            RemoveMemberLink.LinkColor = Color.Firebrick;
+            RemoveMemberLink.Location = new Point(508, 496);
+            RemoveMemberLink.Name = "RemoveMemberLink";
+            RemoveMemberLink.Size = new Size(176, 30);
+            RemoveMemberLink.TabIndex = 12;
+            RemoveMemberLink.TabStop = true;
+            RemoveMemberLink.Text = "Remove Selected";
+            RemoveMemberLink.LinkClicked += RemoveSelectedFromTeam_Button;
             // 
             // TeamNameValue
             // 
@@ -145,6 +147,7 @@
             AddTeamButton.TabIndex = 2;
             AddTeamButton.Text = "Add Member";
             AddTeamButton.UseVisualStyleBackColor = true;
+            AddTeamButton.Click += AddMemberToTeam_Button;
             // 
             // AddMemberLabel
             // 
@@ -249,16 +252,27 @@
             CreateMemberButton.UseVisualStyleBackColor = true;
             CreateMemberButton.Click += CreateMemberButton_Click;
             // 
+            // CreateTeamButton
+            // 
+            CreateTeamButton.Location = new Point(317, 556);
+            CreateTeamButton.Name = "CreateTeamButton";
+            CreateTeamButton.Size = new Size(178, 41);
+            CreateTeamButton.TabIndex = 7;
+            CreateTeamButton.Text = "Create Team";
+            CreateTeamButton.UseVisualStyleBackColor = true;
+            CreateTeamButton.Click += CreateTeamButton_Click;
+            // 
             // CreateTeamForm
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(798, 556);
+            ClientSize = new Size(798, 618);
             Controls.Add(TeamsInTournamentList);
+            Controls.Add(CreateTeamButton);
             Controls.Add(CreateMemberButton);
             Controls.Add(AddTeamButton);
-            Controls.Add(RemoveTeamLink);
+            Controls.Add(RemoveMemberLink);
             Controls.Add(SelectTeamMemberValue);
             Controls.Add(SelectTeamMemberLabel);
             Controls.Add(PhoneValue);
@@ -287,7 +301,7 @@
         private ListBox PrizesList;
         private ListBox TeamsInTournamentList;
         private LinkLabel RemovePrizeLink;
-        private LinkLabel RemoveTeamLink;
+        private LinkLabel RemoveMemberLink;
         private LinkLabel CreatePrizeLink;
         private LinkLabel CreateNewTeamLabel;
         private Label SelectTeamLabel;
@@ -311,5 +325,6 @@
         private Label PhoneLabel;
         private TextBox PhoneValue;
         private Button CreateMemberButton;
+        private Button CreateTeamButton;
     }
 }

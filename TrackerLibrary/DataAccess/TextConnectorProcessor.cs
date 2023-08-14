@@ -1,5 +1,6 @@
 ﻿using System.Configuration;
 using TrackerLibrary.Models;
+using System.Linq;
 
 namespace TrackerLibrary.DataAccess.TextHelpers;
 
@@ -78,6 +79,41 @@ public static class TextConnectorProcessor
     }
 
     /// <summary>
+    /// Get the currently saved teams text file and convert it to a list of team models.
+    /// </summary>
+    /// <param name="lines">List of strings of a text file to each convert to a team model.</param>
+    /// <param name="peopleFilePath">filepath to retrieve all people, to match team member Ids to the associated People Models</param>
+    /// <returns>The list of strings converted to a list of team models.</returns>
+    public static List<TeamModel> ConvertToTeamModels(this List<string> lines, string peopleFilePath)
+    {
+        // Save file layout = teamId,teamName,(teamMembers separated by Pipe)
+        List<PersonModel> personModels = peopleFilePath.FullFilePath().LoadFile().ConvertToPersonModel();
+
+        var output = new List<TeamModel>();
+
+        foreach (var line in lines) // Loop through every line in the text file.
+        {
+            string[] cols = line.Split(','); // Each line should have data separated by a comma.
+
+            string[] teamMemberIds = cols[2].Split('|'); // Each line should have data separated by a comma.
+            foreach (string id in teamMemberIds)
+            {
+                // Add ID and TeamName
+                TeamModel teamModel = new(cols[0], cols[1]);
+
+                // Add all teammembers.
+                teamModel.TeamMembers.Add(personModels.Where(person => person.Id == int.Parse(id)).First());
+
+                // Now a full team, add it to the list of teams.
+                output.Add(teamModel);
+            }
+        }
+
+        return output;
+    }
+
+    #region SaveToTexts
+    /// <summary>
     /// Save a list of prize models as a .csv file.
     /// </summary>
     /// <param name="prizeModels">The list of prize models to save.</param>
@@ -113,13 +149,34 @@ public static class TextConnectorProcessor
         File.WriteAllLines(fileName.FullFilePath(), ToStringList);
     }
 
-    // *Read what the current prizes are in the text file.
-    // *Convert all saved prizes to a list of PrizeModel
-    // Find the last-created ID.
+    /// <summary>
+    /// Save a list of team models as a .csv file.
+    /// </summary>
+    /// <param name="teamModel">The team to save.</param>
+    /// <param name="fileName">the name to give to the save file</param>
+    public static void SaveToTextFile(this List<TeamModel> teamModels, string fileName)
+    {
+        // Save file layout = teamId,teamName,( teamMembers separated by Pipe)
+        List<string> ToStringList = new();
 
-    // Create the new ID
+        foreach (var team in teamModels)
+        {
+            string teamMembersString = string.Empty;
 
-    // Convert the prizes back to a list of <string>
+            // Make the string of team members separated by pipe:
+            foreach (PersonModel member in team.TeamMembers)
+            {
+                teamMembersString += member.Id + "|";
+            }
+            if (!string.IsNullOrEmpty(teamMembersString)) 
+                teamMembersString = teamMembersString.TrimEnd('|'); // Remove the last added pipe character
 
-    // Save the list<string> to the text file.
+            string savedString = $"{team.Id},{team.TeamName},{teamMembersString}";
+
+            ToStringList.Add(savedString);
+        }
+
+        File.WriteAllLines(fileName.FullFilePath(), ToStringList);
+    }
+    #endregion
 }

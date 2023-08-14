@@ -1,6 +1,7 @@
 ﻿namespace TrackerLibrary.DataAccess;
 using TrackerLibrary.Models;
 using TrackerLibrary.DataAccess.TextHelpers;
+using System.ComponentModel;
 
 /// <summary>
 /// Data saving class using a text file.
@@ -9,6 +10,7 @@ public class TextConnector : IDataConnection
 {
     private const string PrizesFile = "PrizeModels.csv"; // csv == Comma-Separated-Values
     private const string PersonsFile = "PersonModels.csv";
+    private const string TeamsFile = "TeamModels.csv";
 
     public PersonModel CreatePerson(PersonModel model)
     {
@@ -48,6 +50,22 @@ public class TextConnector : IDataConnection
         
         // Save the list<string> to the text file as a list of strings.
         prizeModels.SaveToTextFile(fileName: PrizesFile);
+
+        return model;
+    }
+
+    public BindingList<PersonModel> GetPerson_All()
+    {
+        return new BindingList<PersonModel>(PersonsFile.FullFilePath().LoadFile().ConvertToPersonModel().ToList());
+    }
+
+    public TeamModel CreateTeam(TeamModel model)
+    {
+        List<TeamModel> teams = TeamsFile.FullFilePath().LoadFile().ConvertToTeamModels(PersonsFile);
+        int currentId = teams.Count > 0 ? teams.OrderByDescending(x => x.Id).First().Id + 1 : 1;
+
+        teams.Add(model);
+        teams.SaveToTextFile(TeamsFile);
 
         return model;
     }
